@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate, useLocation } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import '../styles/Sidebar.css'
 
-function Sidebar() {
+function Sidebar({role}) {
     const navigate = useNavigate()
-    const location = useLocation()
     const [collapsed,setCollapsed] = useState(true)
 
-    const role = location.state?.role || "Requestor"
     
     return (
         <>

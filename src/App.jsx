@@ -15,22 +15,23 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Login />}/>
 
-				<Route path="/requestor-dashboard" element={<Layout/>}>
+				<Route path="/requestor-dashboard" element={<Layout role='Requestor' />}>
 					<Route index element={<DashboardRequestor/>}/>
 					<Route path="requests" element={<RequestList/>} />
 					<Route path="add" element={<AddRequest/>} />
 					<Route path="edit/:id" element={<EditRequest/>} />
 				</Route>
 
-				<Route path="/hod-dashboard" element={<Layout/>}>
+				<Route path="/hod-dashboard" element={<Layout role='HOD' />}>
 					<Route index element={<DashboardHOD/>}/>
 					<Route path="requests" element={<HODRequests/>} />
 				</Route>
+				
 
-				<Route path="/technician-dashboard" element={<Layout/>}>
+				<Route path="/technician-dashboard" element={<Layout role='Technician' />}>
 				
 					<Route index element={<DashboardTechnician/>}/>
-					
+
 				</Route>
 
 			</Routes>

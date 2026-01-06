@@ -4,12 +4,12 @@ import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import '../styles/Layout.css'
 
-function Layout() {
+function Layout({ role }) {
   return (
     <div className="app-wrapper">
       <Navbar />
       <div className="main-layout">
-        <Sidebar />
+        <Sidebar role={role} />
         <main className="content-area">
           <Outlet />
         </main>
