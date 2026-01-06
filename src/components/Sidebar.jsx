@@ -57,6 +57,12 @@ function Sidebar({role}) {
                             <NavLink to='/hod-dashboard/requests' className='sidebar-link'>
                                 Requests
                             </NavLink>
+                            <NavLink to='/hod-dashboard/all-requests' className='sidebar-link'>
+                                All Requests
+                            </NavLink>
+                            <NavLink to='/hod-dashboard/assigned-requests' className='sidebar-link'>
+                                Assigned Requests
+                            </NavLink>
                         </>
                     )}
 

@@ -8,6 +8,8 @@ import Login from "./pages/Login"
 import DashboardHOD from "./pages/DashboardHOD"
 import DashboardTechnician from "./pages/DashboardTechnician"
 import HODRequests from "./pages/HODRequests"
+import HODAllRequests from "./pages/HODAllRequests"
+import HODAssignedRequests from "./pages/HODAssignedRequests"
 
 function App() {
 	return (
@@ -25,8 +27,10 @@ function App() {
 				<Route path="/hod-dashboard" element={<Layout role='HOD' />}>
 					<Route index element={<DashboardHOD/>}/>
 					<Route path="requests" element={<HODRequests/>} />
+					<Route path="all-requests" element={<HODAllRequests/>} />
+					<Route path="assigned-requests" element={<HODAssignedRequests/>} />
 				</Route>
-				
+
 
 				<Route path="/technician-dashboard" element={<Layout role='Technician' />}>
 				
