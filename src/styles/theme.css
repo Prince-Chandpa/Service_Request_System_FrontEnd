@@ -1,0 +1,24 @@
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: rgba(255, 255, 255, 0.06);
+    --border-glass: rgba(255, 255, 255, 0.12);
+
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --text-light: #e5e7eb;
+    --text-muted: #94a3b8;
+
+    --radius-lg: 18px;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+}

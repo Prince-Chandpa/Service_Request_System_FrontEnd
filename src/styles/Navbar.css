@@ -1,0 +1,27 @@
+.navbar-glass {
+  height: 64px;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-light);
+}
+
+.navbar-glass input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--text-light);
+}
+
+.navbar-glass input::placeholder {
+  color: var(--text-muted);
+}
+
+.navbar-glass .btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--text-light);
+}
+
+.navbar-glass .btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
