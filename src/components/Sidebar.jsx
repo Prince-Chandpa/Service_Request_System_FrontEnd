@@ -71,7 +71,9 @@ function Sidebar({role}) {
                             <NavLink to='/technician-dashboard' end className='sidebar-link'>
                                 Dashboard
                             </NavLink>
-                            
+                            <NavLink to='/technician-dashboard/requests' className='sidebar-link'>
+                                Requests
+                            </NavLink>
                         </>
                     )}
 
