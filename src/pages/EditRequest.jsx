@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "../styles/EditRequest.css";
+import { dummyRequests } from "../data/dummyRequest";
+// import { useNavigate } from "react-router-dom";
 
 function EditRequest() {
+  // const { id } = useNavigate()
+
   const [formData, setFormData] = useState({
     title: "Internet not working",
     description: "Wifi is disconnected since morning",
@@ -17,7 +21,7 @@ function EditRequest() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Updated Request:", formData);
+    // console.log(dummyRequests[id])
     alert("Request Updated");
   };
 

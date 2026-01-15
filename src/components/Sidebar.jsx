@@ -43,9 +43,9 @@ function Sidebar({role}) {
                             <NavLink to='/requestor-dashboard/add' className='sidebar-link'>
                                 Create Request
                             </NavLink>
-                            <NavLink to='/requestor-dashboard/edit/:id' className='sidebar-link'>
+                            {/* <NavLink to='/requestor-dashboard/edit/:id' className='sidebar-link'>
                                 Edit Request
-                            </NavLink>
+                            </NavLink> */}
                         </>
                     )}
 
@@ -74,6 +74,10 @@ function Sidebar({role}) {
                             <NavLink to='/technician-dashboard/requests' className='sidebar-link'>
                                 Requests
                             </NavLink>
+                            <NavLink to="/technician-dashboard/assigned" className="sidebar-link">
+                                Assigned Requests
+                            </NavLink>
+
                         </>
                     )}
 

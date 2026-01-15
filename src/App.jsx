@@ -12,6 +12,7 @@ import HODAllRequests from "./pages/HODAllRequests"
 import HODAssignedRequests from "./pages/HODAssignedRequests"
 import TechnicianRequests from "./pages/TechnicianRequests"
 import UpdateRequest from "./pages/UpdateRequest"
+import TechnicianAssigned from "./pages/TechnicianAssigned"
 
 function App() {
 	return (
@@ -39,6 +40,7 @@ function App() {
 					<Route index element={<DashboardTechnician/>}/>
 					<Route path="requests" element={<TechnicianRequests/>} />
 					<Route path="update/:id" element={<UpdateRequest/>} />
+					<Route path="assigned" element={<TechnicianAssigned/>} />
 				</Route>
 
 			</Routes>

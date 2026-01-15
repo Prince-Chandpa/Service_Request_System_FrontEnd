@@ -16,17 +16,17 @@ function Dashboard() {
           <p>24</p>
         </div>
 
-        <div className="dashboard-card">
+        <div className="dashboard-card warning">
           <h4>Pending</h4>
           <p>10</p>
         </div>
 
-        <div className="dashboard-card">
+        <div className="dashboard-card success">
           <h4>Approved</h4>
           <p>9</p>
         </div>
 
-        <div className="dashboard-card">
+        <div className="dashboard-card danger">
           <h4>Rejected</h4>
           <p>5</p>
         </div>
