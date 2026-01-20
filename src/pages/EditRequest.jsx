@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "../styles/EditRequest.css";
 import { dummyRequests } from "../data/dummyRequest";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function EditRequest() {
-  // const { id } = useNavigate()
+  const { id } = useParams();
+  const navigate = useNavigate()
+
+  const request = dummyRequests.find((req) => req.id === parseInt(id));
 
   const [formData, setFormData] = useState({
-    title: "Internet not working",
-    description: "Wifi is disconnected since morning",
-    priority: "High",
+    title: request.title,
+    description: request.description,
+    priority: request.priority,
   });
 
   const handleChange = (e) => {
@@ -21,8 +24,9 @@ function EditRequest() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(dummyRequests[id])
-    alert("Request Updated");
+    const index = dummyRequests.findIndex(req => req.id === parseInt(id))
+    dummyRequests[index] = { ...request, ...formData}
+    navigate('/requestor-dashboard/requests')
   };
 
   return (

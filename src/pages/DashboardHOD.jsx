@@ -1,5 +1,9 @@
 import React from "react";
 import "../styles/Dashboard.css";
+// import { dummyRequests } from "../data/dummyRequest";
+import calculateTotalRequest from "../service/calculateTotalRequest";
+
+
 
 function DashboardHOD() {
   return (
@@ -13,22 +17,22 @@ function DashboardHOD() {
 
         <div className="dashboard-card">
           <h4>Total Requests</h4>
-          <p>42</p>
+          <p>{calculateTotalRequest()}</p>
         </div>
 
         <div className="dashboard-card warning">
           <h4>Pending Approval</h4>
-          <p>12</p>
+          <p>{calculateTotalRequest('Pending')}</p>
         </div>
 
         <div className="dashboard-card success">
           <h4>Approved</h4>
-          <p>22</p>
+          <p>{calculateTotalRequest('Approved')}</p>
         </div>
 
         <div className="dashboard-card danger">
           <h4>Rejected</h4>
-          <p>8</p>
+          <p>{calculateTotalRequest('Rejected')}</p>
         </div>
 
       </div>

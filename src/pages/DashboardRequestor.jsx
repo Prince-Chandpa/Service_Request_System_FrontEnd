@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Dashboard.css";
+import calculateTotalRequest from "../service/calculateTotalRequest";
 
 function Dashboard() {
   return (
@@ -13,22 +14,22 @@ function Dashboard() {
 
         <div className="dashboard-card">
           <h4>Total Requests</h4>
-          <p>24</p>
+          <p>{calculateTotalRequest()}</p>
         </div>
 
         <div className="dashboard-card warning">
           <h4>Pending</h4>
-          <p>10</p>
+          <p>{calculateTotalRequest('Pending')}</p>
         </div>
 
         <div className="dashboard-card success">
           <h4>Approved</h4>
-          <p>9</p>
+          <p>{calculateTotalRequest('Approved')}</p>
         </div>
 
         <div className="dashboard-card danger">
           <h4>Rejected</h4>
-          <p>5</p>
+          <p>{calculateTotalRequest('Rejected')}</p>
         </div>
       </div>
 

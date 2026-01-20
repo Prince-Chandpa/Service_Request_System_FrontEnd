@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { dummyRequests } from '../data/dummyRequest'
 import '../styles/RequestList.css'
 
 function RequestList() {
+
+    const [requests, setRequests] = useState(dummyRequests);
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -16,6 +18,12 @@ function RequestList() {
             default:
                 return "status bg-secondary"
         }
+    }
+
+    const handleDelete = (id) => {
+        // const index = requests.findIndex(req => req.id === id)
+        const updatedRequests = requests.filter(req => req.id !== id);
+        setRequests(updatedRequests);
     }
 
     return (
@@ -35,7 +43,7 @@ function RequestList() {
                     </thead>
                     <tbody>
                         {
-                            dummyRequests.map((req) => (
+                            requests.map((req) => (
                                 <tr key={req.id}>
                                     <td>{req.id}</td>
                                     <td>{req.title}</td>
@@ -51,7 +59,9 @@ function RequestList() {
                                         </Link>
                                     </td>
                                     <td className='text-center'>
-                                        <button className='delete-btn'>Delete</button>
+                                        <button className='delete-btn' onClick={() => handleDelete(req.id)}>
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))

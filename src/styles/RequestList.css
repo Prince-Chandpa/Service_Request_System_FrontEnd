@@ -75,7 +75,7 @@
     box-shadow: 0 0 15px rgba(239, 68, 69, 0.25);
 }
 
-.edit-btn, .delete-btn{
+.edit-btn, .delete-btn, .approve-btn{
     width: auto;
     padding: 8px  16px;
     border-radius: 12px;
@@ -106,4 +106,14 @@
 .delete-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(246, 59, 59, 0.6);
+}
+
+.approve-btn{
+    background: linear-gradient(135deg, #56fb28, #0c890e);
+    box-shadow: 0 12px 25px rgba(65, 246, 59, 0.45);
+}
+
+.approve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(87, 246, 59, 0.6);
 }

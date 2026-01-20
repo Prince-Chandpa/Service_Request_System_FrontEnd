@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import '../styles/AddRequest.css'
 
 import { dummyRequests } from '../data/dummyRequest'
+import { useNavigate } from 'react-router-dom'
 
 function AddRequest() {
+    const navigate = useNavigate()
 
     const [formData,setFormData] = useState({
         title: "",
@@ -31,6 +33,8 @@ function AddRequest() {
             description: "",
             priority: "Low",
         })
+
+        navigate('/requestor-dashboard/requests')
     }
 
     return (
