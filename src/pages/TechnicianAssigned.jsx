@@ -54,7 +54,7 @@ function TechnicianAssigned() {
                   <td>{req.id}</td>
                   <td>{req.title}</td>
                   <td>
-                    <span className="badge bg-warning text-dark">
+                    <span className="status pending text-center">
                       {req.priority}
                     </span>
                   </td>
