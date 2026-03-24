@@ -13,12 +13,14 @@ import HODAssignedRequests from "./pages/HODAssignedRequests"
 import TechnicianRequests from "./pages/TechnicianRequests"
 import UpdateRequest from "./pages/UpdateRequest"
 import TechnicianAssigned from "./pages/TechnicianAssigned"
+import SignUp from "./pages/SignUp"
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Login />}/>
+				<Route path="/signup" element={<SignUp />}/>
 
 				<Route path="/requestor-dashboard" element={<Layout role='Requestor' />}>
 					<Route index element={<DashboardRequestor/>}/>

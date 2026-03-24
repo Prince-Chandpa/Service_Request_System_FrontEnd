@@ -1,0 +1,68 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--border-glass);
+}
+
+.wide-card {
+  max-width: 800px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.modern-input,
+.modern-select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-glass);
+  border-radius: 4px;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-light);
+}
+
+.modern-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modern-btn:hover {
+  background: var(--primary-dark);
+}
+
+.full-width {
+  grid-column: span 2;
+}

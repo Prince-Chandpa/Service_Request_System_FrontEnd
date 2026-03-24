@@ -1,38 +1,65 @@
-import React from 'react'
-import { assignedRequests } from '../data/assignedRequests'
-import '../styles/RequestList.css'
+import React, { useEffect, useState } from "react";
+import "../styles/RequestList.css";
+import { apiRequest } from "../utils/api";
 
 function HODAssignedRequests() {
-  return (
-    <div className='request-page'>
-        <h3 className='page-title'>Assigned Requests</h3>
+  const [requests, setRequests] = useState([]);
 
-        <div className="glass-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Technician</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        assignedRequests.map(req => (
-                            <tr key={req.id}>
-                                <td>{req.id}</td>
-                                <td>{req.title}</td>
-                                <td>{req.technician}</td>
-                                <td>{req.status}</td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
-        </div>
+  const statusMap = {
+    1: "Pending",
+    2: "Approved",
+    3: "Rejected",
+  };
+
+  const fetchRequests = async () => {
+    const res = await apiRequest("/service-request");
+
+    if (!res.error) {
+      const approved = res.data.filter((r) => r.ServiceRequestStatusID === 2);
+
+      setRequests(approved);
+    }
+  };
+
+  useEffect(() => {
+    fetchRequests();
+  }, []);
+
+  return (
+    <div className="request-page">
+      <h3 className="page-title">Approved Requests</h3>
+
+      <div className="glass-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Priority</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {requests.length === 0 ? (
+              <tr>
+                <td colSpan="4">No Approved Requests</td>
+              </tr>
+            ) : (
+              requests.map((req) => (
+                <tr key={req.ServiceRequestID}>
+                  <td>{req.ServiceRequestID}</td>
+                  <td>{req.ServiceRequestTitle}</td>
+                  <td>{req.PriorityLevel}</td>
+                  <td>{statusMap[req.ServiceRequestStatusID]}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
-  )
+  );
 }
 
-export default HODAssignedRequests
+export default HODAssignedRequests;

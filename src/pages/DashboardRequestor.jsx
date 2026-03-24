@@ -11,7 +11,6 @@ function Dashboard() {
       </p>
 
       <div className="dashboard-cards">
-
         <div className="dashboard-card">
           <h4>Total Requests</h4>
           <p>{calculateTotalRequest()}</p>
@@ -19,17 +18,17 @@ function Dashboard() {
 
         <div className="dashboard-card warning">
           <h4>Pending</h4>
-          <p>{calculateTotalRequest('Pending')}</p>
+          <p>{calculateTotalRequest("Pending")}</p>
         </div>
 
         <div className="dashboard-card success">
           <h4>Approved</h4>
-          <p>{calculateTotalRequest('Approved')}</p>
+          <p>{calculateTotalRequest("Approved")}</p>
         </div>
 
         <div className="dashboard-card danger">
           <h4>Rejected</h4>
-          <p>{calculateTotalRequest('Rejected')}</p>
+          <p>{calculateTotalRequest("Rejected")}</p>
         </div>
       </div>
 
@@ -41,7 +40,6 @@ function Dashboard() {
           and availability.
         </p>
       </div>
-      
     </div>
   );
 }
